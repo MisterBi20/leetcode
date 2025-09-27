@@ -21,23 +21,24 @@ public class Ex6 {
         Scanner scanner = new Scanner(System.in);
         String s = scanner.nextLine();
         int numRows = scanner.nextInt();
-        System.out.println(ex6.convert(s,numRows));
+        System.out.println(ex6.convert(s, numRows));
     }
-    public String convert(String s,int numRows){
-        if (numRows<2) return s;
+
+    public String convert(String s, int numRows) {
+        if (numRows < 2) return s;
         StringBuffer[] strings = new StringBuffer[numRows];
         for (int i = 0; i < numRows; i++) {
             strings[i] = new StringBuffer();
         }
         int i = 0;
         int flag = -1;
-        for (char c:s.toCharArray()){
+        for (char c : s.toCharArray()) {
             strings[i].append(c);
-            if (i==0||i==numRows-1) flag=-flag;
-            i+=flag;
+            if (i == 0 || i == numRows - 1) flag = -flag;
+            i += flag;
         }
         StringBuffer res = new StringBuffer();
-        for (StringBuffer stringBuffer:strings){
+        for (StringBuffer stringBuffer : strings) {
             res.append(stringBuffer);
         }
         return res.toString();

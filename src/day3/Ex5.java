@@ -9,8 +9,9 @@ public class Ex5 {
         String longestPalindrome = ex5.longestPalindrome(s);
         System.out.println(longestPalindrome);
     }
-    public String longestPalindrome(String s){
-        if (s.length()<2) return s;
+
+    public String longestPalindrome(String s) {
+        if (s.length() < 2) return s;
         int maxLen = 1;
         int begin = 0;
         char[] charArray = s.toCharArray();
@@ -27,6 +28,7 @@ public class Ex5 {
         }
         return s.substring(begin, begin + maxLen);
     }
+
     public static boolean isPalindrome(char[] charArray, int left, int right) {
         while (left < right) {
             if (charArray[left] != charArray[right]) {
