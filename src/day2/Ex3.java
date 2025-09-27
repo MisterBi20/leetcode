@@ -8,22 +8,23 @@ import java.util.Scanner;
 //滑动窗口
 public class Ex3 {
     public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
-        String s=scanner.nextLine();
-        Ex3 ex3=new Ex3();
+        Scanner scanner = new Scanner(System.in);
+        String s = scanner.nextLine();
+        Ex3 ex3 = new Ex3();
         System.out.println(ex3.lengthOfLongestSubString(s));
     }
-    public  int lengthOfLongestSubString(String s){
-        if (s.length()==0) return 0;
-        HashMap<Character,Integer> map=new HashMap<>();
-        int max=0;
-        int left=0;
+
+    public int lengthOfLongestSubString(String s) {
+        if (s.length() == 0) return 0;
+        HashMap<Character, Integer> map = new HashMap<>();
+        int max = 0;
+        int left = 0;
         for (int i = 0; i < s.length(); i++) {
-            if (map.containsKey(s.charAt(i))){
-                left=Math.max(left,map.get(s.charAt(i))+1);
+            if (map.containsKey(s.charAt(i))) {
+                left = Math.max(left, map.get(s.charAt(i)) + 1);
             }
-            map.put(s.charAt(i),i);
-            max=Math.max(max,i-left+1);
+            map.put(s.charAt(i), i);
+            max = Math.max(max, i - left + 1);
         }
         return max;
     }
