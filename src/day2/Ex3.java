@@ -13,9 +13,9 @@ public class Ex3 {
         Ex3 ex3 = new Ex3();
         System.out.println(ex3.lengthOfLongestSubString(s));
     }
-
+    /*滑动窗口对比之前的子串，时间复杂度O(n)*/
     public int lengthOfLongestSubString(String s) {
-        if (s.length() == 0) return 0;
+        if (s.isEmpty()) return 0;
         HashMap<Character, Integer> map = new HashMap<>();
         int max = 0;
         int left = 0;
