@@ -13,6 +13,7 @@ public class Ex4 {
         System.out.println(median);
     }
 
+    /*二分查找，比较两个数组的中位数，时间复杂度O(log(m+n))*/
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         if (nums1.length > nums2.length) {
             return findMedianSortedArrays(nums2, nums1);

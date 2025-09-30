@@ -10,6 +10,7 @@ public class Ex5 {
         System.out.println(longestPalindrome);
     }
 
+    /*中心扩展算法，比较时间复杂度O(n^2)*/
     public String longestPalindrome(String s) {
         if (s.length() < 2) return s;
         int maxLen = 1;
@@ -29,6 +30,7 @@ public class Ex5 {
         return s.substring(begin, begin + maxLen);
     }
 
+    /*判断是否为回文串*/
     public static boolean isPalindrome(char[] charArray, int left, int right) {
         while (left < right) {
             if (charArray[left] != charArray[right]) {

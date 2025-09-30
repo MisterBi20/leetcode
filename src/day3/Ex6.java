@@ -24,6 +24,7 @@ public class Ex6 {
         System.out.println(ex6.convert(s, numRows));
     }
 
+    /*模拟Z字形排列，创建多个数组，依次将字符添加到数组中，最后将数组拼接起来，时间复杂度O(n)*/
     public String convert(String s, int numRows) {
         if (numRows < 2) return s;
         StringBuffer[] strings = new StringBuffer[numRows];
