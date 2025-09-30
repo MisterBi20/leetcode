@@ -15,6 +15,7 @@ public class Ex17 {
         System.out.println(ex17.letterCombinations(scanner.nextLine()));
     }
 
+    /*递归加回溯求所有可能的字母组合*/
     public List<String> letterCombinations(String digits) {
         List<String> result = new ArrayList<>();
         if (digits.isEmpty()) return result;
