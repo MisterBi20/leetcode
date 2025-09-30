@@ -13,28 +13,30 @@ import java.util.Scanner;
 
 public class Ex8 {
     public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
-        Ex8 ex8=new Ex8();
+        Scanner scanner = new Scanner(System.in);
+        Ex8 ex8 = new Ex8();
         System.out.println(ex8.myAtoi(scanner.nextLine()));
     }
-    public int myAtoi(String s){
-        int n=s.length(),i=0;
-        long res=0;
-        while (i<n&&s.charAt(i) == ' ') i++;
-        if (i==n) return 0;
-        int flag=1;
-        if (s.charAt(i)=='+') i++;
-        else if (s.charAt(i)=='-'){
-            flag=-1;
+
+    /*遍历字符串，根据题目要求进行转换*/
+    public int myAtoi(String s) {
+        int n = s.length(), i = 0;
+        long res = 0;
+        while (i < n && s.charAt(i) == ' ') i++;
+        if (i == n) return 0;
+        int flag = 1;
+        if (s.charAt(i) == '+') i++;
+        else if (s.charAt(i) == '-') {
+            flag = -1;
             i++;
         }
-        for (;i<n;i++){
-            char c=s.charAt(i);
-            if (c<'0'||c>'9') break;
-            res=res*10+flag*(c-'0');
-            if (res<=Integer.MIN_VALUE)return Integer.MIN_VALUE;
-            if (res>=Integer.MAX_VALUE)return Integer.MAX_VALUE;
+        for (; i < n; i++) {
+            char c = s.charAt(i);
+            if (c < '0' || c > '9') break;
+            res = res * 10 + flag * (c - '0');
+            if (res <= Integer.MIN_VALUE) return Integer.MIN_VALUE;
+            if (res >= Integer.MAX_VALUE) return Integer.MAX_VALUE;
         }
-        return (int)res;
+        return (int) res;
     }
 }

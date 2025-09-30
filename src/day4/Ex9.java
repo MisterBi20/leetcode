@@ -13,6 +13,7 @@ public class Ex9 {
         System.out.println(ex9.isPalindrome(x));
     }
 
+    /*将整数转为字符串，然后比较*/
 /*    public boolean isPalindrome(int x) {
         if (x < 0) return false;
         String s = String.valueOf(x);
@@ -25,6 +26,7 @@ public class Ex9 {
         return true;
     }*/
 
+    /*不将整数转为字符串，直接比较*/
     public boolean isPalindrome(int x) {
         if (x < 0) return false;
         int temp = x;
