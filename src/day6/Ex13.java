@@ -23,28 +23,30 @@ import java.util.Scanner;
 
 public class Ex13 {
     public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         String s = scanner.nextLine();
         Ex13 ex13 = new Ex13();
         System.out.println(ex13.romanToInt(s));
     }
-    public int romanToInt(String s){
-        int[] map=new int['Z'];
-        map['I']=1;
-        map['V']=5;
-        map['X']=10;
-        map['L']=50;
-        map['C']=100;
-        map['D']=500;
-        map['M']=1000;
-        char[] c=s.toCharArray();
-        int ans=0;
+
+    /*用字符数组遍历罗马数字，根据规则判断是否需要减法*/
+    public int romanToInt(String s) {
+        int[] map = new int['Z'];
+        map['I'] = 1;
+        map['V'] = 5;
+        map['X'] = 10;
+        map['L'] = 50;
+        map['C'] = 100;
+        map['D'] = 500;
+        map['M'] = 1000;
+        char[] c = s.toCharArray();
+        int ans = 0;
         for (int i = 0; i < c.length; i++) {
-            if (i!=c.length-1&&map[c[i]]<map[c[i+1]]){
-                ans+=map[c[i+1]]-map[c[i]];
+            if (i != c.length - 1 && map[c[i]] < map[c[i + 1]]) {
+                ans += map[c[i + 1]] - map[c[i]];
                 i++;
-            }else {
-                ans+=map[c[i]];
+            } else {
+                ans += map[c[i]];
             }
         }
         return ans;
