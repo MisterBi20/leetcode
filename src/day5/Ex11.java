@@ -9,25 +9,27 @@ import java.util.Scanner;
 
 public class Ex11 {
     public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
-        int n=scanner.nextInt();
-        int[] height=new int[n];
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int[] height = new int[n];
         for (int i = 0; i < n; i++) {
-            height[i]=scanner.nextInt();
+            height[i] = scanner.nextInt();
         }
-        Ex11 ex11=new Ex11();
+        Ex11 ex11 = new Ex11();
         System.out.println(ex11.maxArea(height));
     }
-    public int maxArea(int[] height){
-        int n =height.length;
-        int l=0,r=n-1;
-        int ans=0;
-        while (l<r){
-            int area=Math.min(height[l],height[r])*(r-l);
-            ans=Math.max(area,ans);
-            if (height[l]<=height[r]){
+
+    /*双指针法，从两端开始向中间移动，每次移动较短的那一端，因为面积受限于较短的那一端*/
+    public int maxArea(int[] height) {
+        int n = height.length;
+        int l = 0, r = n - 1;
+        int ans = 0;
+        while (l < r) {
+            int area = Math.min(height[l], height[r]) * (r - l);
+            ans = Math.max(area, ans);
+            if (height[l] <= height[r]) {
                 l++;
-            }else {
+            } else {
                 r--;
             }
         }

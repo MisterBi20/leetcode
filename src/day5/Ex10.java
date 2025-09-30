@@ -17,6 +17,7 @@ public class Ex10 {
         System.out.println(ex10.isMatch(s, p));
     }
 
+    /*动态规划，f[i][j]表示s的前i个字符是否和p的前j个字符匹配*/
     public boolean isMatch(String s, String p) {
         int m = s.length();
         int n = p.length();
@@ -40,6 +41,7 @@ public class Ex10 {
         return f[m][n];
     }
 
+    /*判断s的第i个字符是否和p的第j个字符匹配*/
     public boolean matches(String s, String p, int i, int j) {
         if (i == 0) {
             return false;

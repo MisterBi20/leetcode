@@ -19,21 +19,23 @@ import java.util.Scanner;
 
 public class Ex12 {
     public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         int num = scanner.nextInt();
-        Ex12 ex12= new Ex12();
+        Ex12 ex12 = new Ex12();
         System.out.println(ex12.intToRoman(num));
     }
-    public String intToRoman(int num){
-        int[] values = {1000,900,500,400,100,90,50,40,10,9,5,4,1};
-        String[] symbols={"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"};
+
+    /*用数组存储罗马数字和对应的值，从大到小遍历数组，根据规则判断是否需要减法*/
+    public String intToRoman(int num) {
+        int[] values = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        String[] symbols = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
         StringBuffer sb = new StringBuffer();
         int i = 0;
-        while (num>0){
-            if (num>=values[i]){
-                num-=values[i];
+        while (num > 0) {
+            if (num >= values[i]) {
+                num -= values[i];
                 sb.append(symbols[i]);
-            }else {
+            } else {
                 i++;
             }
         }
