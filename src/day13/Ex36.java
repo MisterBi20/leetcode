@@ -34,7 +34,7 @@ public class Ex36 {
         }
     }
 
-    //    创建三个在数组遍历每个字符的位置标记个数输出结果
+    //创建三个在数组遍历每个字符的位置标记个数输出结果
     public boolean isValidSudoku(char[][] board) {
         int[][] rows = new int[9][9];
         int[][] columns = new int[9][9];

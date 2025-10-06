@@ -21,7 +21,7 @@ public class Ex35 {
         System.out.println(Arrays.toString(nums));
     }
 
-    //    找数字位置或应该插入的位置
+    //找数字位置或应该插入的位置
     public int searchInsert(int[] nums, int target) {
         int left = 0, right = nums.length - 1;
         while (left <= right) {

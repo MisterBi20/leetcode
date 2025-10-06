@@ -21,7 +21,7 @@ public class Ex34 {
         System.out.println(Arrays.toString(ex34.searchRange(nums, target)));
     }
 
-    //    找到中间值向两边延申
+    //找到中间值向两边延伸
     public int[] searchRange(int[] nums, int target) {
         int left = 0, right = nums.length - 1;
         while (left <= right) {
