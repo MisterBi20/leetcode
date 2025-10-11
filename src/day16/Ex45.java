@@ -21,14 +21,16 @@ public class Ex45 {
         }
         System.out.println(ex45.jump(nums));
     }
-    public int jump(int[] nums){
+
+    //正向查找可达到的最大位置，到达边界时，更新边界并步数加一
+    public int jump(int[] nums) {
         int length = nums.length;
         int end = 0;
         int maxPosition = 0;
         int steps = 0;
-        for (int i = 0; i < length-1; i++) {
-            maxPosition = Math.max(maxPosition,i+nums[i]);
-            if (i == end){
+        for (int i = 0; i < length - 1; i++) {
+            maxPosition = Math.max(maxPosition, i + nums[i]);
+            if (i == end) {
                 end = maxPosition;
                 steps++;
             }
