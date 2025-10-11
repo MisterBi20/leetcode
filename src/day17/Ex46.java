@@ -19,25 +19,27 @@ public class Ex46 {
         }
         System.out.println(ex46.permute(nums));
     }
+
     //回溯，每次从first开始，将first与i交换，然后递归调用，最后将first与i交换回来，保持原数组不变
-    public List<List<Integer>> permute(int[] nums){
+    public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         List<Integer> output = new ArrayList<Integer>();
         for (int num : nums) {
             output.add(num);
         }
         int n = nums.length;
-        backtrack(n,output,res,0);
+        backtrack(n, output, res, 0);
         return res;
     }
-    public void backtrack(int n,List<Integer> output,List<List<Integer>> res,int first){
-        if (first == n){
+
+    public void backtrack(int n, List<Integer> output, List<List<Integer>> res, int first) {
+        if (first == n) {
             res.add(new ArrayList<Integer>(output));
         }
         for (int i = first; i < n; i++) {
-            Collections.swap(output,first,i);
-            backtrack(n,output,res,first+1);
-            Collections.swap(output,first,i);
+            Collections.swap(output, first, i);
+            backtrack(n, output, res, first + 1);
+            Collections.swap(output, first, i);
         }
     }
 }
