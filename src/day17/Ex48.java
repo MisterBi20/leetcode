@@ -22,7 +22,7 @@ public class Ex48 {
         System.out.println(Arrays.deepToString(matrix));
     }
 
-    /*    矩阵转置:matrix[i][j] ↔ matrix[j][i]
+    /*  矩阵转置:matrix[i][j] ↔ matrix[j][i]
         矩阵水平镜像:matrix[i][j] ↔ matrix[i][n-1-j]
         矩阵垂直镜像:matrix[i][j] ↔ matrix[m-1-i][j]
         矩阵顺时针旋转90度， new_matrix[j][n-1-i] = matrix[i][j],就相当于垂直镜像+转置
