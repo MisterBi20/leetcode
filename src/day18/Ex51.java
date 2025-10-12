@@ -18,7 +18,7 @@ public class Ex51 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Ex51 ex51 = new Ex51();
-        int n= scanner.nextInt();
+        int n = scanner.nextInt();
         System.out.println(ex51.solveNQueens(n));
     }
 
@@ -32,6 +32,7 @@ public class Ex51 {
         return res;
     }
 
+    //回溯算法
     private void backtrack(int row) {
         if (row == n) {
             List<String> temp = new ArrayList<>();
@@ -41,22 +42,24 @@ public class Ex51 {
             return;
         }
         for (int col = 0; col < n; col++) {
-            if (legal(row,col)){
-                board[row][col]='Q';
-                backtrack(row+1);
-                board[row][col]='.';
+            if (legal(row, col)) {
+                board[row][col] = 'Q';
+                backtrack(row + 1);
+                board[row][col] = '.';
             }
         }
     }
-    private boolean legal(int r,int c){
+
+    //向上判断是否重复
+    private boolean legal(int r, int c) {
         for (int i = r; i >= 0; i--) {
-            if (board[i][c]=='Q') return false;
+            if (board[i][c] == 'Q') return false;
         }
-        for (int i=r,j=c;i>=0&&j>=0;i--,j--){
-            if (board[i][j]=='Q') return false;
+        for (int i = r, j = c; i >= 0 && j >= 0; i--, j--) {
+            if (board[i][j] == 'Q') return false;
         }
-        for (int i = r,j=c; i >=0&&j<n ; i--,j++) {
-            if (board[i][j]=='Q') return false;
+        for (int i = r, j = c; i >= 0 && j < n; i--, j++) {
+            if (board[i][j] == 'Q') return false;
         }
         return true;
     }
