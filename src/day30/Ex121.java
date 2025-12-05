@@ -6,12 +6,13 @@ package day30;
 
 public class Ex121 {
     public static void main(String[] args) {
-        int[] prices = {7,1,5,3,6,4};
+        int[] prices = {7, 1, 5, 3, 6, 4};
         Ex121 ex121 = new Ex121();
         System.out.println(ex121.maxProfit(prices));
     }
+
     /*遍历数组，记录当前的最低价格，同时计算当前价格与最低价格的差值，更新最大利润*/
-    public int maxProfit(int[] prices){
+    public int maxProfit(int[] prices) {
         int low = Integer.MAX_VALUE;
         int res = 0;
         for (int price : prices) {
